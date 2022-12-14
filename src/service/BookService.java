@@ -34,8 +34,7 @@ public class BookService {
         sc.nextLine();
         bookList.add(book);
     }
-    public void inBook() {
-        List<Book> books = bookList;
+    public void inBook(List<Book> books) {
         Locale localeVn = new Locale("vi", "VN");
         NumberFormat currencyEN = NumberFormat.getCurrencyInstance(localeVn);
         for (Book book: books) {
@@ -48,11 +47,8 @@ public class BookService {
         }
     }
     public void sortBook(){
-        List<Book> sortBook = bookList;
-        Collections.sort(sortBook);
-        for (Book books : sortBook) {
-            System.out.println(books);
-        }
+        Collections.sort(bookList);
+        inBook(bookList);
     }
 
     public void searchBook() {
